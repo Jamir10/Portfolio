@@ -209,7 +209,7 @@ p {
     opacity: 0.7;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     body {
         min-width: 490px;
     }
@@ -239,7 +239,6 @@ p {
         background-color: var(--bg-color-accent);
         justify-content: center;
         flex-shrink: 1;
-    
     }
     #navbar { 
         justify-content: center;
@@ -250,8 +249,28 @@ p {
         justify-content: center;
         gap: 8%;
     }
+   
+    /* =============== */
+
+    .about-info img {
+        float: none;
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hobbies {
+        display: block;
+    }
+    .do {
+        margin-top: 30px;
+    }
+    .do-list {
+        display: block;
+        text-transform: capitalize;
+        text-align: center;
+    }
     
-}
+
 
 /* =============== CONTACT =============== */
 
@@ -406,26 +425,6 @@ li .material-icons-outlined {
 
 .do-list li {
     width: max-content;
-}
-
-@media (max-width: 600px) {
-    .about-info img {
-        float: none;
-        display: block; 
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .hobbies {
-        display: block;
-    }
-    .do {
-        margin-top: 30px;
-    }
-    .do-list {
-        display: block;
-        text-transform: capitalize;
-        text-align: center;
-    }
 }
 
 /* =============== PROJECTS =============== */
