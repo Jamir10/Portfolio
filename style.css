@@ -1,0 +1,570 @@
+
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --max-width: 1280px;
+
+    --bg-color: rgb(14, 15, 25);
+    --bg-color-accent: rgb(50, 57, 61);
+    --bg-yellow: rgb(255, 202, 44);
+    --yellow: rgb(255, 202, 44);
+    
+    --font-color: rgb(248, 249, 250);
+    --font-family: 'Rajdhani', sans-serif;
+
+    --fsize-200: 1.15rem;
+    --fsize-400: 1.25rem;
+    --fsize-600: 2.5rem;
+    --fsize-800: 4rem;
+}
+
+body { 
+    font-family: var(--font-family);
+    background: var(--bg-color);
+    color: var(--font-color);
+    max-width: 100vw;
+    /* min-width: 650px; */
+}
+
+.main-body {
+    max-width: var(--max-width);
+    background: var(--bg-color);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 200px 50px 50px 50px;
+    margin-top: -5px; 
+}
+
+/* =============== NAVIGATION =============== */
+
+#nav-container {
+    /* Background of Navbar */
+    width: 100%;
+    height: 60px;
+    background: var(--bg-color-accent); 
+    position: fixed;
+    z-index: 95;
+}
+
+#navbar {
+    background-color: var(--bg-color-accent);
+
+    height: 100%;
+    max-height: 60px;
+    width: 100%;
+
+    max-width: var(--max-width); 
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-right: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    text-align: center; 
+
+    z-index: 99;
+}
+
+#navlist {
+    display: flex;
+    gap: 50px;
+}
+
+li {
+    list-style: none;
+    font-size: var(--fsize-400);
+    font-weight: 600;
+    color: var(--font-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+a:visited {
+    color: var(--font-color);
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* =============== HOME =============== */
+
+h1 { 
+    font-size: var(--fsize-800);
+    font-weight: 600; 
+    width: 100%;
+}
+
+h2 {
+    font-size: var(--fsize-600);
+}
+
+h3 {
+    font-size: var(--fsize-400);
+    text-transform: capitalize;
+}
+
+p {
+    font-size: var(--fsize-200);
+    margin-top: 30px;
+}
+
+#home {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    /* grid-auto-rows: minmax(150px, auto); */
+    grid-template-areas: 
+        "header sidebar"
+        "header2 sidebar"
+        "header2 sidebar"
+    ;   
+    grid-column-gap: 50px;
+
+    align-items: center;
+    justify-items: center;
+} 
+
+.hero {
+    grid-area: header;
+    text-align: center;
+    padding: 0;
+}
+.info {
+    grid-area: header2;
+    text-align: center;
+}
+.hero-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    grid-area: sidebar;
+    border: 3px solid var(--bg-yellow);
+}
+
+/* =============== SOCIAL ICONS =============== */
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 35px;
+    text-align: center;
+    text-decoration: none;
+    margin: 15px 5px;
+    border-radius: 10%;
+    outline: 1px solid var(--bg-color-accent);
+}
+  
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+  
+.fa-instagram {
+    background: #e1306c;
+    color: white;
+}
+
+/* =============== BUTTONS =============== */
+
+.btn {
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: var(--bg-yellow);
+    padding: 10px;
+    color: black;
+    font-size: var(--fsize-400);
+    font-weight: 600;
+    text-transform: capitalize;
+    font-family: var(--font-family);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+    body {
+        min-width: 490px;
+    }
+    #home {
+        background: var(--bg-color);
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        padding: 100px 60px;
+    } 
+    #home h1 {
+        order: 1;
+        text-align: center;
+    }
+    #home img { 
+        order: 2;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #home #info {
+        order: 3;
+        margin-top: 20px;
+    }
+
+    #navbar {
+        background-color: var(--bg-color-accent);
+        justify-content: center;
+        flex-shrink: 1;
+    
+    }
+    #navbar { 
+        justify-content: center;
+        padding: 0 10px;
+        text-align: center;   
+    }
+    #navlist {
+        justify-content: center;
+        gap: 8%;
+    }
+    
+}
+
+/* =============== CONTACT =============== */
+
+#contact {
+    display: block;
+    text-align: center;
+}
+
+.inquiry {
+    margin: auto;
+    border-radius: 20px;
+    padding: 30px 50px;
+    border: 5px solid var(--bg-color-accent); 
+    max-width: 600px;
+    width: 100%;
+}
+
+#inquiry-form input {
+    display: block;
+    padding: 10px;
+    color: var(--bg-color);
+    font-size: var(--fsize-200);
+    font-family: var(--font-family);
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+#inquiry-form #subject {
+    width: 65%;
+}
+
+#inquiry-form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    width: 100%;
+    font-family: var(--font-family);
+    color: var(--bg-color);
+    font-size: var(--fsize-200);
+    margin-bottom: 5px;
+    min-height: 300px;
+    max-height: 600px;
+    resize: vertical;
+}
+
+/* =============== ABOUT =============== */
+
+.about-me-heading {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+#about h1 {
+    max-width: fit-content;
+    margin: 0;
+}
+
+.center-line {
+    width: 100vw;
+    height: 5px;
+    background: var(--bg-color-accent);
+}
+
+#about h3 {
+    text-align: center;
+}
+
+.about-info {
+    text-align: justify;
+    padding: 20px;
+}
+
+.about-info img {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+/* =============== THINGS I DO / THINGS I LOVE =============== */
+
+.hobbies {
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.love {
+    padding: 0 20px;
+}
+
+.hobbies h3 {
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+.material-icons-outlined {
+    border: 1px solid var(--bg-yellow);
+    color: rgb(248, 249, 250);
+    background: var(--bg-color-accent);
+    border-radius: 3px;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 60px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.do {
+    padding: 0 20px;  
+}
+
+.do-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-transform: capitalize;
+    column-gap: 10px;
+}
+
+li .material-icons-outlined {
+    color: var(--bg-yellow);
+    font-size: 14px;
+    border: none;
+    margin-right: 3px;
+    text-align: center;
+}
+
+.do-list li {
+    width: max-content;
+}
+
+@media (max-width: 600px) {
+    .about-info img {
+        float: none;
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hobbies {
+        display: block;
+    }
+    .do {
+        margin-top: 30px;
+    }
+    .do-list {
+        display: block;
+        text-transform: capitalize;
+        text-align: center;
+    }
+}
+
+/* =============== PROJECTS =============== */
+
+.projects {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.background-project {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    margin: 5px;
+    background-repeat: no-repeat; 
+    transition: transform .3s;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-project:hover {
+   -ms-transform: scale(1.3); /* IE 9 */
+    -webkit-transform: scale(1.3); /* Safari 3-8 */
+    transform: scale(1.3);
+}
+
+.projects span {
+    height: 120px;
+    width: 120px;
+    background: rgba(0, 0, 0, .75);
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 2px;
+    color: var(--bg-yellow);
+    border: 1px solid var(--bg-yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+}
+
+.projects p {
+    color: var(--font-color);
+    background: var(--bg-color-accent);
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid var(--bg-yellow);
+    opacity: .75;
+}
+
+.projects a:hover {
+    opacity: .7;
+}
+
+.img-cat-photo-app {
+    background-image: url(Cat\ Photo\ App.png);
+}
+
+.img-coffee-menu {
+    background-image: url(Coffee\ Menu.png);
+}
+
+.img-tribute-page {
+    background-image: url(Tribute\ Page.png);
+}
+
+.img-registration-form {
+    background-image: url(Registration.png);
+}
+
+.img-Picasso-Painting {
+    background-image: url(Picasso\ Painting.png);
+}
+
+.img-Nutrition-Facts {
+    background-image: url(Nutrition\ Facts.png);
+}
+
+.img-Color-Markers {
+    background-image: url(Color\ Markers.png);
+}
+
+.img-Balance-Sheet {
+    background-image: url(Balance\ Sheet.png);
+}
+
+.img-Product-Landing-Page {
+    background-image: url(Product\ Landing\ Page.png);
+}
+
+.img-Flexbox-Photo-Gallery {
+    background-image: url(Flexbox\ Photo\ Gallery.png);
+}
+
+.img-Rothko-Painting {
+    background-image: url(Rothko\ Painting.png);
+}
+
+.img-Quiz {
+    background-image: url(Quiz.png);
+}
+
+.img-Penguin {
+    background-image: url(Penguin.png);
+}
+
+.img-Ferris-Wheel {
+    background-image: url(Ferris\ Wheel.png);
+}
+
+.img-Magazine {
+    background-image: url(Magazine.png);
+}
+
+.img-City-Skyline {
+    background-image: url(City\ Skyline.png);
+}
+
+.img-Technical-Documentation-Page {
+    background-image: url(Technical\ Documentation\ Page.png);
+}
+
+.img-Piano {
+    background-image: url(Piano.png);
+}
+
+.img-Survey-Form {
+    background-image: url(Survey\ Form.png);
+}
+
+
+
+
+
+
